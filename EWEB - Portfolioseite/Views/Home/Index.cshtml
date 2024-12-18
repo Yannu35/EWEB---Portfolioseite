@@ -2,7 +2,243 @@
     ViewData["Title"] = "Yannic Hartmann";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Willkommen auf meiner Webseite!</h1>
-    <p></p>
-</div>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #74b9ff, #a29bfe);
+            color: #333;
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+
+            header h1 {
+                margin: 0;
+            }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.7);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+            nav a {
+                color: #fff;
+                text-decoration: none;
+                font-size: 1.2rem;
+            }
+
+                nav a:hover {
+                    text-decoration: underline;
+                }
+
+        .section {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+            .section h2 {
+                margin-bottom: 1rem;
+                color: #222;
+                font-weight: bold;
+            }
+
+            .section p {
+                color: #444;
+                line-height: 1.6;
+            }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+            .project:hover {
+                transform: scale(1.05);
+            }
+
+            .project img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+            }
+
+            .project .info {
+                padding: 1rem;
+            }
+
+                .project .info h3 {
+                    margin: 0 0 0.5rem;
+                    color: #333;
+                }
+
+                .project .info p {
+                    margin: 0;
+                    font-size: 0.9rem;
+                    color: #666;
+                }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        .text-center {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .display-4 {
+            font-size: 2.5rem;
+            color: #222;
+            font-weight: bold;
+        }
+
+        /* Background Emoji Flames and Faces */
+        #background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .flame, .face {
+            position: absolute;
+            font-size: 1.5rem;
+            opacity: 0.3;
+            transition: transform 0.2s linear, opacity 0.2s linear;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="background"></div>
+
+    <header>
+        <h1>Meine Projekte - Eine Übersicht</h1>
+    </header>
+
+    <nav>
+        <a href="#about">Über mich</a>
+        <a href="#projects">Projekte</a>
+        <a href="#contact">Kontakt</a>
+    </nav>
+
+    <div class="text-center">
+        <h1 class="display-4">Willkommen auf meiner Webseite!</h1>
+        <p></p>
+    </div>
+
+    <section id="about" class="section">
+        <h2>Über mich</h2>
+        <p>Ich heisse Yannic, bin 26 Jahre alt und studiere Wirtschaftsinformatik an der Berner Fachhochschule. Der Studienplan sieht vor, dass während der Studienzeit diverse Projekte und Arbeiten erarbeitet werden sollen. Auf meiner Portfolio-Webseite möchte ich Ihnen die bisher erledigten Projekte und Tätigkeiten näher bringen. Es freut mich, dass Ihr hier auf meiner Seite gelandet seid. Viel Vergnügen!</p>
+    </section>
+
+    <section id="projects" class="section">
+        <h2>Projekte</h2>
+        <div class="projects">
+            <div class="project">
+                <img src="" alt="Projektbild">
+                <div class="info">
+                    <h3>Projektname</h3>
+                    <!-- HIER PROJEKT BESCHREIBUNG EINFÜGEN -->
+                    <p>Kurze Beschreibung des Projekts.</p>
+                </div>
+            </div>
+            <!-- WEITERE PROJEKTE KÖNNEN HIER HINZUGEFÜGT WERDEN -->
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Kontakt</h2>
+        <!-- HIER KONTAKTFORMULAR ODER KONTAKTINFORMATIONEN EINFÜGEN -->
+        <p>Füge deine Kontaktinformationen hier hinzu oder erstelle ein Formular.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Dein Name. Alle Rechte vorbehalten.</p>
+    </footer>
+
+    <script>
+        const background = document.getElementById('background');
+
+        function createEmoji(type) {
+            const emoji = document.createElement('div');
+            emoji.classList.add(type);
+            emoji.textContent = type === 'flame' ? '🔥' : '😎';
+            emoji.style.left = Math.random() * 100 + 'vw';
+            emoji.style.top = Math.random() * 100 + 'vh';
+            emoji.style.fontSize = Math.random() * 1.5 + 1 + 'rem';
+            emoji.style.opacity = Math.random() * 0.2 + 0.2;
+
+            background.appendChild(emoji);
+
+            let posX = Math.random() * 2 - 1; // Horizontal direction
+            let posY = Math.random() * 2 - 1; // Vertical direction
+
+            const moveEmoji = setInterval(() => {
+                const rect = emoji.getBoundingClientRect();
+                emoji.style.left = rect.left + posX + 'px';
+                emoji.style.top = rect.top + posY + 'px';
+
+                if (
+                    rect.top < -50 ||
+                    rect.left < -50 ||
+                    rect.bottom > window.innerHeight + 50 ||
+                    rect.right > window.innerWidth + 50
+                ) {
+                    clearInterval(moveEmoji);
+                    emoji.remove();
+                }
+            }, 50);
+
+            setTimeout(() => {
+                emoji.style.opacity = '0';
+                setTimeout(() => emoji.remove(), 1000);
+            }, 7000); // Fade out after 4 seconds
+        }
+
+        setInterval(() => createEmoji('flame'), 700);
+        setInterval(() => createEmoji('face'), 1200);
+    </script>
+
+</body>
+</html>
