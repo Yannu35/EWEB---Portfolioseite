@@ -17,19 +17,15 @@ namespace EWEB___Portfolioseite.Controllers
         {
             return View();
         }
-        public IActionResult Contact()
+        public IActionResult Kontakt()
         {
             return View();
         }
-        public IActionResult AboutMe()
+        public IActionResult Projekte()
         {
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

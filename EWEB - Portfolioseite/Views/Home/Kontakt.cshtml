@@ -153,7 +153,7 @@
     <div id="background"></div>
 
     <header>
-        <h1>Hartmann Yannic - Eine Übersicht</h1>
+        <h1>Wie du mich erreichst</h1>
     </header>
 
     <nav>
@@ -162,14 +162,10 @@
         <a asp-area="" asp-controller="Home" asp-action="Kontakt">Kontakt</a>
     </nav>
 
-    <div class="text-center">
-        <h1 class="display-4">Willkommen auf meiner Webseite!</h1>
-        <p></p>
-    </div>
-
-    <section id="about" class="section">
-        <h2>Über mich</h2>
-        <p>Ich heisse Yannic, bin 26 Jahre alt und studiere Wirtschaftsinformatik an der Berner Fachhochschule. Der Studienplan sieht vor, dass während der Studienzeit diverse Projekte und Arbeiten erarbeitet werden sollen. Auf meiner Portfolio-Webseite möchte ich Ihnen die bisher erledigten Projekte und Tätigkeiten näher bringen. Es freut mich, dass Ihr hier auf meiner Seite gelandet seid. Viel Vergnügen!</p>
+    <section id="contact" class="section">
+        <h2>Kontakt</h2>
+        <!-- HIER KONTAKTFORMULAR ODER KONTAKTINFORMATIONEN EINFÜGEN -->
+        <p>Füge deine Kontaktinformationen hier hinzu oder erstelle ein Formular.</p>
     </section>
 
     <footer>
@@ -182,7 +178,7 @@
         function createEmoji(type) {
             const emoji = document.createElement('div');
             emoji.classList.add(type);
-            emoji.textContent = type === 'flame' ? '🔥' : '😎';
+            emoji.textContent = type === 'flame' ? 'YH' : '☎️';
             emoji.style.left = Math.random() * 100 + 'vw';
             emoji.style.top = Math.random() * 100 + 'vh';
             emoji.style.fontSize = Math.random() * 1.5 + 1 + 'rem';
