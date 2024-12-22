@@ -1,9 +1,9 @@
 ﻿@{
     ViewData["Title"] = "Yannic Hartmann";
 }
+@model EWEB___Portfolioseite.Models.KontaktViewModel
 
-
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +28,119 @@
         <!-- HIER KONTAKTFORMULAR ODER KONTAKTINFORMATIONEN EINFÜGEN -->
         <p>Füge deine Kontaktinformationen hier hinzu oder erstelle ein Formular.</p>
     </section>
+    <body>
+        <div class="container">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder=@Model.Name />
 
+            <label for="message">Text</label>
+            <textarea id="message" placeholder="Ihr Text" rows="3"></textarea>
+
+            <button onclick="location.href='@Url.Action("KontaktformularSend", "Home")'">Senden</button>
+
+            <div class="chat-box" id="chatBox"></div>
+        </div>
+
+        <script>
+            const sendButton = document.getElementById("send");
+            const chatBox = document.getElementById("chatBox");
+
+            sendButton.addEventListener("click", () => {
+              const nameInput = document.getElementById("name").value.trim();
+              const messageInput = document.getElementById("message").value.trim();
+
+              if (nameInput && messageInput) {
+                const timestamp = new Date().toLocaleTimeString();
+                const chatMessage = `<div class='chat-message'><span>${timestamp} ${nameInput}:</span> ${messageInput}</div>`;
+                chatBox.innerHTML += chatMessage;
+
+                // Eingabefelder leeren
+                document.getElementById("name").value = "";
+                document.getElementById("message").value = "";
+
+                // Scroll zur neuesten Nachricht
+                chatBox.scrollTop = chatBox.scrollHeight;
+              } else {
+                alert("Bitte beide Felder ausfüllen!");
+              }
+            });
+        </script>
+    </body>
+   <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+
+    .container {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input[type="text"] {
+        padding: 10px;
+        width: 200px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    textarea {
+        padding: 10px;
+        width: calc(100% - 22px);
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    .chat-box {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 20px;
+        padding: 10px;
+        height: 200px;
+        width: calc(100% - 22px);
+        overflow-y: auto;
+        background-color: #f9f9f9;
+    }
+
+    .chat-message {
+        margin: 5px 0;
+        padding: 8px;
+        border-radius: 4px;
+        background-color: #e9ecef;
+    }
+
+    .chat-message span {
+        font-weight: bold;
+        color: #007BFF;
+    }
+  </style>
     <footer>
         <p>&copy; 2024 Yannic Hartmann. Alle Rechte vorbehalten.</p>
     </footer>
