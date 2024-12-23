@@ -62,7 +62,7 @@ nav {
 
 .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns:1;
     gap: 1.5rem;
 }
 
@@ -135,4 +135,67 @@ footer {
     font-size: 1.5rem;
     opacity: 0.3;
     transition: transform 0.2s linear, opacity 0.2s linear;
+}
+
+.containerKontaktFormular {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+input[type="text"] {
+    padding: 10px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+textarea {
+    padding: 10px;
+    width: calc(100% - 22px);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #0056b3;
+}
+.chat-boxKontaktFormular {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 20px;
+    padding: 10px;
+    height: 200px;
+    width: calc(100% - 22px);
+    overflow-y: auto;
+    background-color: #f9f9f9;
+}
+.chat-messageKontaktFormular {
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: #e9ecef;
+}
+
+.chat-messageKontaktFormular span {
+    font-weight: bold;
+    color: #007BFF;
+}
+.chat-messageKontaktFormular name {
+    font-weight: bold;
+     color: #b200ff;
 }
