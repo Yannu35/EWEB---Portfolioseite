@@ -199,3 +199,94 @@ button:hover {
     font-weight: bold;
      color: #b200ff;
 }
+
+.comment-box {
+    max-width: 1200px;
+    padding: 20px;
+    background: linear-gradient(135deg, #e6f7ff, #f0f8ff);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    line-height: 1.6;
+    color: #333;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+    .comment-box:hover {
+        transform: scale(1.02);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        background: linear-gradient(135deg, #d6f3ff, #e0f7ff);
+    }
+
+    .comment-box h2 {
+        text-align: center;
+        color: #0077b5;
+        margin-bottom: 20px;
+    }
+
+    .comment-box p {
+        margin-bottom: 15px;
+    }
+
+.highlight {
+    font-weight: bold;
+    color: #0077b5;
+}
+
+.note {
+    font-style: italic;
+    color: #555;
+    margin-top: 20px;
+}
+
+
+
+
+
+
+body.page-about {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+header.page-about-header {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #0077b5;
+    color: white;
+    font-size: 2em;
+}
+
+.section.page-about-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    padding: 50px 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+    .section.page-about-section.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .section.page-about-section img {
+        width: 50%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+blockquote.page-about-quote {
+    font-style: italic;
+    color: #555;
+    margin: 20px 0;
+}
+
+h2.page-about-title {
+    color: #0077b5;
+}

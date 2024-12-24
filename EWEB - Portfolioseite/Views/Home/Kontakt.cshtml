@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -23,12 +24,50 @@
 
     <section id="contact" class="section">
         <h2>Kontakt</h2>
-        <!-- HIER KONTAKTFORMULAR ODER KONTAKTINFORMATIONEN EINFÜGEN -->
-        <p>Füge deine Kontaktinformationen hier hinzu oder erstelle ein Formular.</p>
+        <p>Bei Fragen oder Anliegen zu meinen getätigten Projekten kannst du dich gerne bei mir melden.</p>
+        <div class="contact-container">
+            <div class="contact-header">
+                Kontaktinformationen:
+
+            </div>
+            <div class="contact-container">
+                <span>Yannic Hartmann</span>
+            </div>
+            <div class="contact-details">
+                <div class="contact-item">
+                    <i class="fa fa-envelope"></i>
+                    <span>yannic.hartmann@students.bfh.ch</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa fa-map-marker-alt"></i>
+                    <span>Bern, Schweiz</span>
+                </div>
+                <a href="https://www.linkedin.com/in/yannic-hartmann-170a72267" target="_blank">
+                    <i class="fab fa-linkedin" style="font-size: 2em; color: #0077b5;"></i>
+                </a>
+            </div>
+            <br>
+            <br>
+                <div class="comment-box">
+                    <h2>Hinterlasse einen Kommentar</h2>
+                    <p>
+                        Du hast im untenstehenden <span class="highlight">Kontaktformular</span> die Möglichkeit, einen Kommentar zu hinterlassen.
+                        Trage dafür bitte deinen <span class="highlight">Namen</span> und deine <span class="highlight">Nachricht</span> in die vorgesehenen Felder ein und klicke auf <span class="highlight">"Senden"</span>.
+                    </p>
+                    <p>
+                        Dein Kommentar wird anschließend auf der Seite <span class="highlight">sichtbar</span> sein.
+                        Natürlich kannst du auch <span class="highlight">mehrere Kommentare</span> hinterlassen, wenn du möchtest.
+                    </p>
+                    <p class="note">
+                        Jeder Kommentar ist herzlich willkommen! 😊
+                    </p>
+                </div>
+</div>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     </section>
     <div class="containerKontaktFormular">
         <label for="name">Name</label>
-        <input type="text" id="name" placeholder="Ihr Text" />
+        <input type="text" id="name" placeholder="Ihr Name" />
         <label for="message">Text</label>
         <textarea id="message" placeholder="Ihr Text" rows="3"></textarea>
         <button id="send">Senden</button>

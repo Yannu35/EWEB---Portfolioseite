@@ -30,56 +30,99 @@
     </div>
     
     <section id="about" class="section">
-        <h2>Über mich</h2>
+        <h2>Wer bin ich?</h2>
     </section>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2723.9825248043994!2d7.439100582595075!3d46.94238256494489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478e39fb0d3c8a4f%3A0x6fde5011c9517c39!2sBerner%20Fachhochschule%20BFH%2C%20Wirtschaft!5e0!3m2!1sde!2sch!4v1734958658168!5m2!1sde!2sch" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet"
-          href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <!-- Leaflet JavaScript -->
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js">
-    </script>
+    <p>Ich heisse Yannic, bin 27 Jahre alt.</p>
+    <section class="section page-about-section">
+        <h2 class="page-about-title">Studium</h2>
+        <p>Aktuell studiere ich Wirtschaftsinformatik an der Berner Fachhochschule in Bern. Ich absolviere das 7. Semester im Teilzeitmodell. Jedes Semester ist eine neue spannende Reise durch diverse Module mit einzigartigen Themen. Jedes Semester wurde so gestaltet, dass ich die meisten Module an gewissen definierten Tage habe. Das ermöglicht es mir neben dem Studium Teilzeit arbeiten zu können. Die Schule befindet sich direkt neben dem Marzili-Freibad. Im Sommer ist esmeinen Abschluss in Informatik gemacht und dabei fundierte Kenntnisse in Softwareentwicklung und Systemdesign erworben.</p>
+        <p><img style="border-left;" src="/img/Bild_Moderne_Schule.png" alt="Meine Schule">
+        <p><content style="border-right;" "hallo"</p>
+        <blockquote class="page-about-quote">"Bildung ist die mächtigste Waffe, die du verwenden kannst, um die Welt zu verändern." – Nelson Mandela</blockquote>
+        </script>
+        <!-- Leaflet CSS -->
+        <link rel="stylesheet"
+              href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <!-- Leaflet JavaScript -->
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js">
+        </script>
 
-    <style>
-        #map {
-            height: 500px; /* Höhe der Karte */
-            width: 100%; /* Breite der Karte */
-        }
-    </style>
+        <style>
+            #map {
+                height: 500px; /* Höhe der Karte */
+                width: 100%; /* Breite der Karte */
+            }
+        </style>
 
-    <!-- Karte -->
-    <div id="map"></div>
+        <!--Karte -->
+        <div id="map"></div>
+
+        <script>
+            // 1. Karte erstellen und auf ein Div binden
+            var map = L.map('map').setView([46.9424, 7.4406], 16); // Koordinaten für Berner Fachhochschule, Campus Marzili, Brückenstrasse 73
+
+            // 2. OpenStreetMap-Kachel-Layer hinzufügen
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+              maxZoom: 19,
+              attribution: '© OpenStreetMap'
+            }).addTo(map);
+
+            // 3. Marker hinzufügen
+            var marker = L.marker([46.9424, 7.4406]).addTo(map);
+
+            // 4. Popup mit Text anzeigen
+            marker.bindPopup("<b>Berner Fachhochschule</b><br>Campus Marzili, Brückenstrasse 73, Bern.").openPopup();
+
+            // 5. Polygon-Umrandung hinzufügen
+            var polygon = L.polygon([
+              [46.9426, 7.4400],
+              [46.9428, 7.4410],
+              [46.9422, 7.4412],
+              [46.9420, 7.4402]
+            ], {
+              color: 'blue',
+              fillColor: '#add8e6',
+              fillOpacity: 0.5
+            }).addTo(map);
+
+            polygon.bindPopup("Campus Marzili Umrandung");
+        </script>
+    </section>
+
+    <section class="section page-about-section">
+        <h2 class="page-about-title">Praktikum</h2>
+        <p>Mein Praktikum bei einem führenden Technologieunternehmen ermöglichte es mir, praktische Erfahrungen im Bereich Webentwicklung zu sammeln.</p>
+        <img src="https://via.placeholder.com/800x400" alt="Praktikum" />
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1361.5183974526146!2d7.4636427440474105!3d46.960967071634144!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478e39ae60b6fc0b%3A0x33db50a19d45090c!2sBundesamt%20f%C3%BCr%20Polizei%20fedpol!5e0!3m2!1sde!2sch!4v1735055132935!5m2!1sde!2sch" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    </section>
+
+    <section class="section page-about-section">
+        <h2 class="page-about-title">Berufserfahrung</h2>
+        <p>Als Softwareentwickler habe ich mehrere Projekte erfolgreich umgesetzt, darunter dynamische Webanwendungen und mobile Apps.</p>
+        <blockquote class="page-about-quote">"Arbeit ist sichtbar gemachte Liebe." – Khalil Gibran</blockquote>
+    </section>
 
     <script>
-        // 1. Karte erstellen und auf ein Div binden
-        var map = L.map('map').setView([46.9424, 7.4406], 16); // Koordinaten für Berner Fachhochschule, Campus Marzili, Brückenstrasse 73
+        const sections = document.querySelectorAll('.page-about-section');
 
-        // 2. OpenStreetMap-Kachel-Layer hinzufügen
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          maxZoom: 19,
-          attribution: '© OpenStreetMap'
-        }).addTo(map);
+        const revealSection = () => {
+          sections.forEach(section => {
+            const sectionTop = section.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
 
-        // 3. Marker hinzufügen
-        var marker = L.marker([46.9424, 7.4406]).addTo(map);
+            if (sectionTop < windowHeight - 50) {
+              section.classList.add('show');
+            } else {
+              section.classList.remove('show');
+            }
+          });
+        };
 
-        // 4. Popup mit Text anzeigen
-        marker.bindPopup("<b>Berner Fachhochschule</b><br>Campus Marzili, Brückenstrasse 73, Bern.").openPopup();
-
-        // 5. Polygon-Umrandung hinzufügen
-        var polygon = L.polygon([
-          [46.9426, 7.4400],
-          [46.9428, 7.4410],
-          [46.9422, 7.4412],
-          [46.9420, 7.4402]
-        ], {
-          color: 'blue',
-          fillColor: '#add8e6',
-          fillOpacity: 0.5
-        }).addTo(map);
-
-        polygon.bindPopup("Campus Marzili Umrandung");
+        window.addEventListener('scroll', revealSection);
+        revealSection(); // Initialer Check beim Laden der Seite
     </script>
+    
     <footer>
         <p>&copy; 2024 Yannic Hartmann. Alle Rechte vorbehalten.</p>
     </footer>
@@ -129,4 +172,3 @@
 
 </body>
 </html>
-
